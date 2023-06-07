@@ -26,7 +26,7 @@ class ReservationView(FormView):
         table_list = Table.objects.all()
         available_tables = []
         for table in table_list:
-            if check_availability(table, data['booking_time']):
+            if check_availability(table, data['booking_time'], data['guests']):
                 available_tables.append(table)
 
         if len(available_tables) > 0:
@@ -34,15 +34,16 @@ class ReservationView(FormView):
             reservation = Reservation.objects.create(
                 user=self.request.user,
                 table=table,
-                booking_time=data['booking_time']
+                booking_time=data['booking_time'],
+                guests=data['guests']
             )
             reservation.save()
             return HttpResponse(reservation)
         else:
-            return HttpResponse('No rooms available')
+            return HttpResponse('No tables available')
 
 
-def check_availability(table, booking_time):
+def check_availability(table, booking_time, guests):
     avail_list = []
     reservation_list = Reservation.objects.filter(table=table)
     for reservation in reservation_list:

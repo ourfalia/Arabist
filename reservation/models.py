@@ -6,10 +6,9 @@ from django.conf import settings
 
 class Table(models.Model):
     number = models.IntegerField()
-    capacity = models.IntegerField()
 
     def __str__(self):
-        return f'Table number {self.number} is for  {self.capacity} people'
+        return f'Table number {self.number}'
 
 
 class Reservation(models.Model):
@@ -17,6 +16,7 @@ class Reservation(models.Model):
                              on_delete=models.CASCADE)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     booking_time = models.DateTimeField()
+    guests = models.IntegerField(null=False, blank=False, default=0)
 
     def __str__(self):
         return f'{self.user} has booked table numer {self.table.number} on {self.booking_time}'
