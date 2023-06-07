@@ -1,13 +1,14 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 
-from .models import Table
+from .models import Table, Reservation
 
 # Create your views here.
 
 
-def make_reservation(request):
-    pass
+class TableList(ListView):
+    model = Table
 
 
-def table_list(request):
-    pass
+class ReservationList(ListView):
+    model = Reservation
