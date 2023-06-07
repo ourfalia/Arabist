@@ -2,5 +2,6 @@ from django import forms
 
 
 class AvailabilityForm(forms.Form):
-    booking_time = forms.DateTimeField(required=True)
+    booking_date = forms.DateField(required=True)
+    booking_time = forms.TimeField(required=True)
     guests = forms.DecimalField(required=True)
