@@ -9,9 +9,11 @@
 </head>
 
 <body>
+    {% for reservation in reservation_list %}
     <h2>
-        {{reservation_list}}
+        {{reservation}}
     </h2>
+    {% endfor %}
 </body>
 
 </html>
