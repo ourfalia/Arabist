@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, FormView
+from django.http import HttpResponse
 import datetime
 
 from .models import Table, Reservation
@@ -16,12 +17,29 @@ class ReservationList(ListView):
     model = Reservation
 
 
-# class ReservationView(FormView):
-#     form_class = AvailabilityForm
-#     template_name = 'availability_form.html'
+class ReservationView(FormView):
+    form_class = AvailabilityForm
+    template_name = 'availability_form.html'
 
-#     def form_valid(self, form):
-#         data = form.cleaned_data
+    def form_valid(self, form):
+        data = form.cleaned_data
+        table_list = Table.objects.all()
+        available_tables = []
+        for table in table_list:
+            if check_availability(table, data['booking_time']):
+                available_tables.append(table)
+
+        if len(available_tables) > 0:
+            table = available_tables[0]
+            reservation = Reservation.objects.create(
+                user=self.request.user,
+                table=table,
+                booking_time=data['booking_time']
+            )
+            reservation.save()
+            return HttpResponse(reservation)
+        else:
+            return HttpResponse('No rooms available')
 
 
 def check_availability(table, booking_time):
