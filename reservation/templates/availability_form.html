@@ -9,12 +9,40 @@
 </head>
 
 <body>
-    <h1>Availability form</h1>
-    <form action="" method="post">
+
+    <!-- <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>
+    </form> -->
+    <form action="" method="post">
+        {% csrf_token %}
+        <p><label for="id_booking_date">Booking date:</label> <input type="date" name="booking_date" required="True"
+                id="id_booking_date"></p>
+        <p><label for="id_booking_time">Booking time:</label>
+            <select name="booking_time" required="True" id="id_booking_time">
+                <option>10:00</option>
+                <option>11:30</option>
+                <option>13:00</option>
+                <option>14:30</option>
+                <option>16:00</option>
+                <option>17:30</option>
+                <option>19:00</option>
+                <option>20:30</option>
+            </select>
+        </p>
+        <p><label for="id_guests">Guests:</label>
+            <select name="guests" step="any" required="" id="id_guests">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </p>
+        <button type="submit">Submit</button>
     </form>
+
 
 </body>
 
