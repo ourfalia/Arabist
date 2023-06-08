@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from django.views.generic import ListView, FormView
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.views.generic import ListView, FormView, DeleteView
+from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 import datetime
 
 from .models import Table, Reservation
@@ -61,3 +63,9 @@ def check_availability(table, booking_date, booking_time, guests):
         if reservation.booking_date == booking_date and reservation.booking_time == booking_time:
             avail_list.append(False)
     return all(avail_list)
+
+
+class CancelReservation(DeleteView):
+    model = Reservation
+    template_name = 'cancel_view.html'
+    success_url = reverse_lazy('reservation:ReservationList')
