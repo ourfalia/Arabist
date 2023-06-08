@@ -15,6 +15,16 @@ class TableList(ListView):
 
 class ReservationList(ListView):
     model = Reservation
+    template_name = "reservation_list.html"
+
+    def get_queryset(self, *args, **kwargs):
+        if self.request.user.is_superuser:
+            reservation_list = Reservation.objects.all()
+            return reservation_list
+        else:
+            reservation_list = Reservation.objects.filter(
+                user=self.request.user)
+            return reservation_list
 
 
 class ReservationView(FormView):
