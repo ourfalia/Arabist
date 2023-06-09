@@ -1,7 +1,8 @@
 from django import forms
+from .models import Reservation
 
 
-class AvailabilityForm(forms.Form):
-    booking_date = forms.DateField(required=True)
-    booking_time = forms.TimeField(required=True)
-    guests = forms.DecimalField(required=True)
+class AvailabilityForm(forms.ModelForm):
+    class Meta:
+        model = Reservation
+        fields = ['booking_date', 'booking_time', 'guests']

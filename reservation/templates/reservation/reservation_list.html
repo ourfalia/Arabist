@@ -29,10 +29,11 @@
             <h3>Time {{reservation.booking_time}}</h3>
         </div>
         <div>
-            <a href="{{reservation.get_cancel_reservation_url}}">
-                <h3>Cancel reservation </h3>
+            <a href="{% url 'edit_reservation' reservation.id %}">
+                <h3>Edit reservation </h3>
             </a>
         </div>
+
         <hr>
         {% endfor %}
         <div>

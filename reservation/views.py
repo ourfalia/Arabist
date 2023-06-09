@@ -43,15 +43,15 @@ class ReservationView(FormView):
 
         if len(available_tables) > 0:
             table = available_tables[0]
-            reservation = Reservation.objects.create(
+            make_reservation = Reservation.objects.create(
                 user=self.request.user,
                 table=table,
                 booking_date=data['booking_date'],
                 booking_time=data['booking_time'],
                 guests=data['guests']
             )
-            reservation.save()
-            return HttpResponse(reservation)
+            make_reservation.save()
+            return HttpResponse(make_reservation)
         else:
             return HttpResponse('No tables available')
 
@@ -69,3 +69,23 @@ class CancelReservation(DeleteView):
     model = Reservation
     template_name = 'cancel_view.html'
     success_url = reverse_lazy('reservation:ReservationList')
+
+
+def edit_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    if request.method == 'POST':
+        form = AvailabilityForm(
+            request.POST, request.FILES, instance=reservation)
+        if form.is_valid():
+            form.save()
+            return redirect('ReservationList')
+    else:
+        form = AvailabilityForm(instance=reservation)
+
+    template = 'reservation/edit_reservation.html'
+    context = {
+        'form': form,
+        'reservation': reservation,
+    }
+
+    return render(request, template, context)
