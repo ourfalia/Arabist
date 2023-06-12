@@ -1,52 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation list</title>
-</head>
+{% block content %}
 
-<body>
+<div>
+    <h2>Reservation details</h2>
+</div>
+
+<hr>
+<div>
+    {% for reservation in reservation_list %}
     <div>
-        <h2>Reservation details</h2>
+        <h3>A table has been booked by {{reservation.user}} for:</h3>
     </div>
-
+    <div>
+        <h3>Number of people: {{reservation.guests}} </h3>
+    </div>
+    <div>
+        <h3>Date: {{reservation.booking_date}} </h3>
+    </div>
+    <div>
+        <h3>Time {{reservation.booking_time}}</h3>
+    </div>
+    <div>
+        <a href="{% url 'edit_reservation' reservation.id %}">
+            <h3>Edit reservation </h3>
+        </a>
+    </div>
+    <div>
+        <a href="{% url 'cancel_reservation' reservation.id %}">
+            <h3>Cancel reservation </h3>
+        </a>
+    </div>
     <hr>
+    {% endfor %}
     <div>
-        {% for reservation in reservation_list %}
-        <div>
-            <h3>A table has been booked by {{reservation.user}} for:</h3>
-        </div>
-        <div>
-            <h3>Number of people: {{reservation.guests}} </h3>
-        </div>
-        <div>
-            <h3>Date: {{reservation.booking_date}} </h3>
-        </div>
-        <div>
-            <h3>Time {{reservation.booking_time}}</h3>
-        </div>
-        <div>
-            <a href="{% url 'edit_reservation' reservation.id %}">
-                <h3>Edit reservation </h3>
-            </a>
-        </div>
-        <div>
-            <a href="{% url 'cancel_reservation' reservation.id %}">
-                <h3>Cancel reservation </h3>
-            </a>
-        </div>
-        <hr>
-        {% endfor %}
-        <div>
-            <h3>Looking forward to see you!</h3>
-        </div>
+        <h3>Looking forward to see you!</h3>
     </div>
+</div>
 
 
-
-</body>
-
-</html>
+{% endblock %}

@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.generic import ListView, FormView, DeleteView
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 import datetime
 
 from .models import Table, Reservation
@@ -11,11 +13,7 @@ from .forms import AvailabilityForm
 # Create your views here.
 
 
-class TableList(ListView):
-    model = Table
-
-
-class ReservationList(ListView):
+class ReservationList(LoginRequiredMixin, ListView):
     model = Reservation
     template_name = "reservation_list.html"
 
@@ -29,7 +27,7 @@ class ReservationList(ListView):
             return reservation_list
 
 
-class ReservationView(FormView):
+class ReservationView(LoginRequiredMixin, FormView):
     form_class = AvailabilityForm
     template_name = 'availability_form.html'
 
@@ -68,6 +66,7 @@ def check_availability(table, booking_date, booking_time, guests):
 def cancel_reservation(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     reservation.delete()
+    messages.success(request, 'Your reservation has been cancelled!')
     return redirect(reverse('ReservationList'))
 
 
@@ -78,6 +77,8 @@ def edit_reservation(request, reservation_id):
             request.POST, request.FILES, instance=reservation)
         if form.is_valid():
             form.save()
+            messages.success(
+                request, 'Your reservation has been successfully updated!')
             return redirect('ReservationList')
     else:
         form = AvailabilityForm(instance=reservation)
