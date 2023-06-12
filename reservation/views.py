@@ -65,10 +65,10 @@ def check_availability(table, booking_date, booking_time, guests):
     return all(avail_list)
 
 
-class CancelReservation(DeleteView):
-    model = Reservation
-    template_name = 'cancel_view.html'
-    success_url = reverse_lazy('reservation:ReservationList')
+def cancel_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    reservation.delete()
+    return redirect(reverse('ReservationList'))
 
 
 def edit_reservation(request, reservation_id):

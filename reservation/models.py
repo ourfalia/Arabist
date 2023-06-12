@@ -22,6 +22,3 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f'{self.user} has booked table numer {self.table.number} on {self.booking_date} at {self.booking_time}'
-
-    def get_cancel_reservation_url(self):
-        return reverse_lazy('reservation:CancelReservation', args=[self.pk, ])

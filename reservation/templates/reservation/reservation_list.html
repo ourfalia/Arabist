@@ -33,7 +33,11 @@
                 <h3>Edit reservation </h3>
             </a>
         </div>
-
+        <div>
+            <a href="{% url 'cancel_reservation' reservation.id %}">
+                <h3>Cancel reservation </h3>
+            </a>
+        </div>
         <hr>
         {% endfor %}
         <div>
