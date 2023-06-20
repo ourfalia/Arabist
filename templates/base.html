@@ -27,6 +27,7 @@
     {% endblock %}
 
     {% block corejs %}
+    <script src="https://kit.fontawesome.com/396b0aad36.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -97,20 +98,17 @@
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Products</h6>
+                        <h6 class="text-uppercase fw-bold">Reservations</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #7c4dff; height: 2px" />
                         <p>
-                            <a href="#!" class="text-white">MDBootstrap</a>
+                            <a href="{% url 'ReservationView' %}" class="text-white">Book a Table</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">MDWordPress</a>
+                            <a href="{% url 'ReservationList' %}" class="text-white">View Reservations</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">BrandFlow</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">Bootstrap Angular</a>
+                            <a href="{% url 'menu' %}" class="text-white">View Our Menu</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -122,16 +120,16 @@
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #7c4dff; height: 2px" />
                         <p>
-                            <a href="#!" class="text-white">Your Account</a>
+                            <a href="{% url 'profile' %}" class="text-white">Your Profile</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Become an Affiliate</a>
+                            <a href="{% url 'account_login' %}" class="text-white">Log In</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Shipping Rates</a>
+                            <a href="{% url 'account_logout' %}" class="text-white">Log Out</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Help</a>
+                            <a href="{% url 'home' %}" class="text-white">Home</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -142,10 +140,10 @@
                         <h6 class="text-uppercase fw-bold">Contact</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                        <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                        <p><i class="fas fa-home mr-3"></i> Dublin, D4 1012, Ireland</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@arabist.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 353 234 567 56</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 353 234 567 55</p>
                     </div>
                     <!-- Grid column -->
                 </div>

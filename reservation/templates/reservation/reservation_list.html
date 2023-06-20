@@ -24,12 +24,15 @@
         </div>
         <div>
             <a class="btn-outline-secondary btn mt-3" href="{% url 'edit_reservation' reservation.id %}">
-                <h5>Edit reservation </h5>
+                <h5>Edit</h5>
+            </a>
+            <a class="btn-outline-secondary btn mt-3" href="{% url 'cancel_reservation' reservation.id %}">
+                <h5>Cancel</h5>
             </a>
         </div>
         <div>
-            <a class="btn-outline-secondary btn mt-3" href="{% url 'cancel_reservation' reservation.id %}">
-                <h5>Cancel reservation </h5>
+            <a class="btn-outline-secondary btn mt-3" href="{% url 'ReservationView' %}" class="dropdown-item">
+                <h5>New Reservation</h5>
             </a>
         </div>
         <hr>
