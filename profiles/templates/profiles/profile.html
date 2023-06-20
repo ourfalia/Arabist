@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block content %}
+<div class="container">
+    <div class="m-3">
+        <h1>
+            My Profile
+        </h1>
+    </div>
+    <hr>
+    <div class="m-3">
+        <h3>Hello {{ profile }}</h3>
+        <h5>You can check and edit your reservations here <a class="btn-outline-secondary btn ml-3"
+                href="{% url 'ReservationList' %}">
+                <h5>Reservations</h5>
+            </a> </h5>
+    </div>
+    <hr>
+    <div class="m-3">
+        <a class="btn btn-outline-secondary" href="{% url 'home' %}">
+            <h5>Home</h5>
+        </a>
+    </div>
+</div>
 
-<body>
-    <h1>Profile</h1>
-</body>
 
-</html>
+
+{% endblock %}

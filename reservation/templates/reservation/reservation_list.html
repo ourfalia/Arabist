@@ -2,42 +2,47 @@
 {% load static %}
 
 {% block content %}
+<div class="container">
+    <div>
+        <h2>Reservation details</h2>
+    </div>
 
-<div>
-    <h2>Reservation details</h2>
-</div>
-
-<hr>
-<div>
-    {% for reservation in reservation_list %}
-    <div>
-        <h3>A table has been booked by {{reservation.user}} for:</h3>
-    </div>
-    <div>
-        <h3>Number of people: {{reservation.guests}} </h3>
-    </div>
-    <div>
-        <h3>Date: {{reservation.booking_date}} </h3>
-    </div>
-    <div>
-        <h3>Time {{reservation.booking_time}}</h3>
-    </div>
-    <div>
-        <a href="{% url 'edit_reservation' reservation.id %}">
-            <h3>Edit reservation </h3>
-        </a>
-    </div>
-    <div>
-        <a href="{% url 'cancel_reservation' reservation.id %}">
-            <h3>Cancel reservation </h3>
-        </a>
-    </div>
     <hr>
-    {% endfor %}
     <div>
-        <h3>Looking forward to see you!</h3>
+        {% for reservation in reservation_list %}
+        <div>
+            <h5>{{reservation.user}} has booked a table for:</h5>
+        </div>
+        <div>
+            <h5>Number of people: {{reservation.guests}} </h5>
+        </div>
+        <div>
+            <h5>Date: {{reservation.booking_date}} </h5>
+        </div>
+        <div>
+            <h5>Time {{reservation.booking_time}}</h5>
+        </div>
+        <div>
+            <a class="btn-outline-secondary btn mt-3" href="{% url 'edit_reservation' reservation.id %}">
+                <h5>Edit reservation </h5>
+            </a>
+        </div>
+        <div>
+            <a class="btn-outline-secondary btn mt-3" href="{% url 'cancel_reservation' reservation.id %}">
+                <h5>Cancel reservation </h5>
+            </a>
+        </div>
+        <hr>
+        <hr>
+        {% endfor %}
+    </div>
+    <div class="m-3">
+        <a class="btn btn-outline-secondary" href="{% url 'home' %}">
+            <h5>Home</h5>
+        </a>
     </div>
 </div>
+
 
 
 {% endblock %}
