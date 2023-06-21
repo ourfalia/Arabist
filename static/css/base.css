@@ -107,4 +107,8 @@ body {
         h2 {
             font-size: 125%;
         }
+
+        .main-header {
+            padding-top: 200%;
+        }
     }
