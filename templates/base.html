@@ -45,8 +45,42 @@
 </head>
 
 <body>
-    <header class="container-fluid fixed-top"></header>
-
+    <!-- <header class="container-fluid fixed-top"></header> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'home' %}">Arabista</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'menu' %}">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ReservationView' %}">Reservation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                        <a class="dropdown-item" href="{% url 'account_signup' %}">Signup</a>
+                        <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -65,6 +99,19 @@
     </div>
     {% endif %}
 
+    <header class="jumbotron jumbotron-fluid header-bg">
+        <div class="container text-center ">
+            <h1 class="display-4 text-black">Welcome to Arabista</h1>
+            <p class="lead text-black">Delicious food served with passion</p>
+            <a href="{% url 'ReservationView' %}" class="btn btn-success btn-lg">Book a Table</a>
+        </div>
+    </header>
+
+
+
+
+
+
     {% block page_header %}
     {% endblock %}
 
@@ -72,7 +119,7 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start text-white" style="background-color: rgb(44, 44, 44)">
+    <footer class="text-center text-lg-start text-white bg-dark">
 
         <!-- Section: Links  -->
         <section class="pt-3">
@@ -83,8 +130,7 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold">Arabista</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto " />
                         <p>
                             Arabista restaurant is a delightful dining establishment that specializes in serving
                             authentic Middle Eastern cuisine,
@@ -99,8 +145,7 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold">Reservations</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" />
                         <p>
                             <a href="{% url 'ReservationView' %}" class="text-white">Book a Table</a>
                         </p>
@@ -117,8 +162,7 @@
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold">Useful links</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" />
                         <p>
                             <a href="{% url 'profile' %}" class="text-white">Your Profile</a>
                         </p>
@@ -135,11 +179,10 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <div id="contact" class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold">Contact</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" />
                         <p><i class="fas fa-home mr-3"></i> Dublin, D4 1012, Ireland</p>
                         <p><i class="fas fa-envelope mr-3"></i> info@arabist.com</p>
                         <p><i class="fas fa-phone mr-3"></i> + 353 234 567 56</p>

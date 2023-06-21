@@ -2,16 +2,24 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <h1 class="display-4 text-success pt-5 pb-5">It works!</h1>
-    <div pt-5 pb-5>
-        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-        <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
-        <a href="{% url 'ReservationView' %}" class="dropdown-item">Make a Reservation</a>
-        <a href="{% url 'menu' %}" class="dropdown-item">menu</a>
+<section class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>About Us</h2>
+            <p>Arabista restaurant is a delightful dining establishment that specializes in serving
+                authentic Middle Eastern cuisine,
+                including the ever-popular falafel. Located in Dublin, it offers a warm and
+                inviting ambiance, reflecting the
+                rich cultural heritage of the region.</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Our Menu</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, exercitationem.</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Contact</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, exercitationem.</p>
+        </div>
     </div>
-</div>
-
+</section>
 {% endblock %}

@@ -29,6 +29,24 @@ h1 {
     font-size: 300%;
 }
 
+body {
+    font-family: 'Lato';
+}
+
+.header-bg {
+    background: url('/media/menu/homepage_background.jpg') no-repeat center center fixed;
+    height: calc(100vh - 164px);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.text-black {
+    color: black;
+    font-weight: 200;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255);
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
