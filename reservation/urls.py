@@ -2,8 +2,6 @@ from django.urls import path
 from . import views
 from .views import ReservationList, ReservationView
 
-# , CancelReservation
-
 
 urlpatterns = [
     path('reservation_list/', ReservationList.as_view(), name='ReservationList'),
