@@ -21,4 +21,4 @@ class Reservation(models.Model):
     guests = models.IntegerField(null=False, blank=False, default=0)
 
     def __str__(self):
-        return f'{self.user} has booked table numer {self.table.number} on {self.booking_date} at {self.booking_time}'
+        return f'{self.user} has booked table number {self.table.number} on {self.booking_date} at {self.booking_time}'
