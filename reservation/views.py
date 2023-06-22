@@ -1,15 +1,8 @@
-from django.urls import reverse
-from django.shortcuts import render, redirect
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.views.generic import View
-
-from django.views.generic import ListView, FormView, DeleteView
-from django.http import HttpResponse
-from django.http import HttpResponseRedirect
+from django.views.generic import View, ListView
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-import datetime
 
 from .models import Table, Reservation
 from .forms import AvailabilityForm
@@ -77,6 +70,7 @@ def check_availability(table, booking_date, booking_time, guests):
     return all(avail_list)
 
 
+@login_required
 def cancel_reservation(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     reservation.delete()
@@ -84,6 +78,7 @@ def cancel_reservation(request, reservation_id):
     return redirect(reverse('ReservationList'))
 
 
+@login_required
 def edit_reservation(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     if request.method == 'POST':
