@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.generic import ListView, FormView, DeleteView
-from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -49,9 +49,12 @@ class ReservationView(LoginRequiredMixin, FormView):
                 guests=data['guests']
             )
             make_reservation.save()
-            return HttpResponse(make_reservation)
+            messages.success(
+                self.request, 'Successfully booked a table! See your booking details below.')
+            return HttpResponseRedirect(reverse('ReservationList'))
         else:
-            return HttpResponse('No tables available')
+            messages.error(self.request, 'No tables available')
+            return self.form_invalid(form)
 
 
 def check_availability(table, booking_date, booking_time, guests):
