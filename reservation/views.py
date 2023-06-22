@@ -1,4 +1,8 @@
+from django.urls import reverse
+from django.shortcuts import render, redirect
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.views.generic import View
+
 from django.views.generic import ListView, FormView, DeleteView
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -27,34 +31,41 @@ class ReservationList(LoginRequiredMixin, ListView):
             return reservation_list
 
 
-class ReservationView(LoginRequiredMixin, FormView):
+class ReservationView(LoginRequiredMixin, View):
     form_class = AvailabilityForm
     template_name = 'availability_form.html'
 
-    def form_valid(self, form):
-        data = form.cleaned_data
-        table_list = Table.objects.all()
-        available_tables = []
-        for table in table_list:
-            if check_availability(table, data['booking_date'], data['booking_time'], data['guests']):
-                available_tables.append(table)
+    def get(self, request):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
 
-        if len(available_tables) > 0:
-            table = available_tables[0]
-            make_reservation = Reservation.objects.create(
-                user=self.request.user,
-                table=table,
-                booking_date=data['booking_date'],
-                booking_time=data['booking_time'],
-                guests=data['guests']
-            )
-            make_reservation.save()
-            messages.success(
-                self.request, 'Successfully booked a table! See your booking details below.')
-            return HttpResponseRedirect(reverse('ReservationList'))
-        else:
-            messages.error(self.request, 'No tables available')
-            return self.form_invalid(form)
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            table_list = Table.objects.all()
+            available_tables = []
+            for table in table_list:
+                if check_availability(table, data['booking_date'], data['booking_time'], data['guests']):
+                    available_tables.append(table)
+
+            if len(available_tables) > 0:
+                table = available_tables[0]
+                make_reservation = Reservation.objects.create(
+                    user=request.user,
+                    table=table,
+                    booking_date=data['booking_date'],
+                    booking_time=data['booking_time'],
+                    guests=data['guests']
+                )
+                make_reservation.save()
+                messages.success(
+                    request, 'Successfully booked a table! See your booking details below.')
+                return redirect('ReservationList')
+            else:
+                messages.error(
+                    request, 'Sorry! No more tables available at this time. Please try different time')
+        return render(request, self.template_name, {'form': form})
 
 
 def check_availability(table, booking_date, booking_time, guests):
