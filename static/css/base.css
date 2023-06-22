@@ -3,7 +3,7 @@
     box-shadow: 0 6px 10px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .05);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     border: 0;
-    border-radius: 1rem
+    border-radius: 1rem;
 }
 
 .card:hover {
@@ -72,7 +72,8 @@ body {
 }
 
 .allauth-form-inner-content input {
-    border-color: rgb(50, 50, 50) border-radius: 10;
+    border-color: rgb(50, 50, 50);
+    border-radius: 10px;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -85,30 +86,30 @@ body {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-
     display: inline-block;
+}
 
-    @media screen and (max-width:1200px) {
-        .card-width {
-            width: 18rem;
-        }
+@media screen and (max-width: 1200px) {
+    .allauth-form-inner-content .card-width {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .allauth-form-inner-content .card-width {
+        width: 100%;
+        margin: auto;
     }
 
-    @media screen and (max-width:780px) {
-        .card-width {
-            width: 100%;
-            margin: auto;
-        }
-
-        h1 {
-            font-size: 200%;
-        }
-
-        h2 {
-            font-size: 125%;
-        }
-
-        .main-header {
-            padding-top: 200%;
-        }
+    .allauth-form-inner-content h1 {
+        font-size: 200%;
     }
+
+    .allauth-form-inner-content h2 {
+        font-size: 125%;
+    }
+
+    .allauth-form-inner-content .main-header {
+        padding-top: 200%;
+    }
+}
