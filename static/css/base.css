@@ -34,7 +34,7 @@ body {
 }
 
 .header-bg {
-    background: url('/media/menu/homepage_background.jpg') no-repeat center center fixed;
+    background: url('https: //res.cloudinary.com/dayz1hfom/image/upload/v1687527295/bg-image_tw5clo.jpg') no-repeat center center fixed;
     height: calc(100vh - 164px);
     background-size: cover;
     background-position: center;
