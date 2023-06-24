@@ -14,8 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['arabista-62cccb7ee578.herokuapp.com', 'localhost',
-                 '8000-ourfalia-arabista-chgmzxld5p.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['arabista-62cccb7ee578.herokuapp.com', 'localhost']
 
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
