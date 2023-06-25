@@ -116,4 +116,8 @@ body {
     .allauth-form-inner-content .main-header {
         padding-top: 200%;
     }
+
+    .main-header {
+        margin-top: 17rem;
+    }
 }
