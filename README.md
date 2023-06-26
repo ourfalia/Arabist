@@ -26,7 +26,7 @@ Welcome to the Arabista Restaurant Website documentation. This document aims to 
 
   - #### Design Process and Reasoning:
 
-  - The design process for the Arabista Restaurant Website followed a user-centered approach, focusing on creating an intuitive and visually appealing experience for visitors. The key steps undertaken during the design process included research, ideation, prototyping, testing, and refinement.
+  The design process for the Arabista Restaurant Website followed a user-centered approach, focusing on creating an intuitive and visually appealing experience for visitors. The key steps undertaken during the design process included research, ideation, prototyping, testing, and refinement.
 
   Extensive user research was conducted to gain insights into the target audience, their preferences, and expectations when visiting a restaurant website. This research informed the design decisions and helped create a user-centric interface.
 
@@ -36,11 +36,11 @@ Welcome to the Arabista Restaurant Website documentation. This document aims to 
 
   Wireframes were created as a blueprint for the Arabista website, outlining the layout, structure, and key elements of each page. These wireframes illustrate the placement of navigation menus, content sections, imagery, and interactive components. They serve as a foundation for further design iterations and development.
 
-  - Home page Wireframe
+  1. Home page Wireframe
   <h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734614/home-wireframe_npclo4.jpg"><h2>
-  - Menu page Wireframe
+  2. Menu page Wireframe
   <h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734693/menu-wireframe_tp8nx7.jpg"><h2>
-  - Mobile Wireframe
+  3. Mobile Wireframe
   <h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734731/mobile-wireframe_owygfx.jpg"></h2>
 
   - #### Mockups:
@@ -51,16 +51,16 @@ Welcome to the Arabista Restaurant Website documentation. This document aims to 
 
   - ##### Colour Scheme
 
-  - The background image is colorful.
+    The background image is colorful.
     The main colours used are grey, white, back, brown and green.
 
   - ##### Typography
 
-  - The Lato font is the main font used through out the website.
+    The Lato font is the main font used through out the website.
 
   - ##### Imagery
 
-  - The background image is suitable for the website. The menu section has images of the plates which can also be found in the plate details.
+    The background image is suitable for the website. The menu section has images of the plates which can also be found in the plate details.
 
   - #### Diagrams:
 
@@ -89,33 +89,27 @@ Welcome to the Arabista Restaurant Website documentation. This document aims to 
 ### Frameworks, Libraries & Programs Used
 
 1. [Django==3.2](<https://en.wikipedia.org/wiki/Django_(web_framework)>)
-   - Django framework was used to speed up development of the application which was mainly built in the Python programming language.
+   Django framework was used to speed up development of the application which was mainly built in the Python programming language.
 2. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-   - Bootstrap was used to assist with the responsiveness and styling of the website.
+   Bootstrap was used to assist with the responsiveness and styling of the website.
 3. [Hover.css:](https://ianlunn.github.io/Hover/)
-   - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
+   Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 4. [Google Fonts:](https://fonts.google.com/)
-   - Google fonts were used to import the 'Lato' font into the style.css file which is used on all pages throughout the project.
+   Google fonts were used to import the 'Lato' font into the style.css file which is used on all pages throughout the project.
 5. [Font Awesome:](https://fontawesome.com/)
-   - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+   Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 6. [jQuery:](https://jquery.com/)
-   - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
+   jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
 7. [Git](https://git-scm.com/)
-   - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+   Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 8. [GitHub:](https://github.com/)
-
-   - GitHub is used to store the projects code after being pushed from Git.
-
+   GitHub is used to store the projects code after being pushed from Git.
 9. [Heroku](https://en.wikipedia.org/wiki/Heroku)
-
-   - Heroku was used to deploy this project to.
-
+   Heroku was used to deploy this project to.
 10. [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)
-
-    - PostgreSQL was used as database for this project.
-
+    PostgreSQL was used as database for this project.
 11. [Cloudinary](https://en.wikipedia.org/wiki/Cloudinary)
-    - Cloudinary was use to store the static and media files.
+    Cloudinary was use to store the static and media files.
 
 ## Testing Write-ups:
 
@@ -139,25 +133,25 @@ Comprehensive testing was conducted throughout the development of the Arabista R
 
 - ### Performance Testing:
   Performance testing was carried out to assess the website's loading speed and responsiveness. This involved evaluating page load times, optimizing image sizes, and minimizing unnecessary code or resources to ensure optimal performance.
-- ### Testing User Stories from User Experience (UX) Section
-  1. As a user, I want to be able to register for an account and easily login/out
-     . The account link can be found at the right corner of the navigation bar and it has the signup, login/out links.
-  2. As a user, I want to be able to easily navigate through the website
-     . The landing page has a clear structure with a navigation bar at the top which has links to the different pages on the website. In the header section there is a greeting statement and a button to make a reservation. All the links can also be found on the footer section.
+- ### Testing User Stories from User Experience (UX) Section:
+  1. As a user, I want to be able to register for an account and easily login/out.
+     The account link can be found at the right corner of the navigation bar and it has the signup, login/out links.
+  2. As a user, I want to be able to easily navigate through the website.
+     The landing page has a clear structure with a navigation bar at the top which has links to the different pages on the website. In the header section there is a greeting statement and a button to make a reservation. All the links can also be found on the footer section.
   3. As a user, I want to be able to contact the restaurant.
-     . The contact information can be found on the footer section. There is also a button which is linked to the contact information in the body of the home page.
+     The contact information can be found on the footer section. There is also a button which is linked to the contact information in the body of the home page.
   4. As a user, I want to be able to easily make a reservation.
-     . Users can book a table by klicking the link at the nav bar, the button on the header section or the link on the footer section. The reservation page is esay to use and the form can be filled easily.
+     Users can book a table by klicking the link at the nav bar, the button on the header section or the link on the footer section. The reservation page is esay to use and the form can be filled easily.
   5. As a user, I want to be able to view my reservation.
-     . Users can access their reservations through their profile pages where they can find a button that takes them to the reservations page. Another lick of this page can be found on the footer section.
+     Users can access their reservations through their profile pages where they can find a button that takes them to the reservations page. Another lick of this page can be found on the footer section.
   6. As a user, I want to be able edit my reservation.
-     . Users can edit their reservations on the reservation details page.
+     Users can edit their reservations on the reservation details page.
   7. As a user, I want to be able to cancel my reservation.
-     . Users can also cancel their reservations on the reservation details page.
+     Users can also cancel their reservations on the reservation details page.
   8. As a user, I want to be able to have a personalisedprofile so I can view my reservation.
-     . The profile page has basic information of users with two buttons for the reservation details page and home page.
+     The profile page has basic information of users with two buttons for the reservation details page and home page.
   9. As a user, I want to be able to view the menu.
-     1. There is a link to the menu at the nav bar, the body, and the footer. The page itself has clear layout with the meals on cards and a link on each card to the meal details.
+     There is a link to the menu at the nav bar, the body, and the footer. The page itself has clear layout with the meals on cards and a link on each card to the meal details.
 
 ### Known Bugs
 
