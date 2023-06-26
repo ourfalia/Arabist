@@ -1,19 +1,16 @@
 <h1 align="center">Arabista Restaurant</h1>
 
-[View the live project here.](https://arabista.herokuapp.com/)
+[View the live project here.](https://arabista-62cccb7ee578.herokuapp.com/)
 
-This website is associated with an imaginary restaurant called Arabista, a restaurant based in Dublin. The website allows potential customers to book tables, modify or cancel their reservations. It also allows the business owner to control reservations and update the content of the website through the admin page. It is designed to be responsive and accessible on a range of devices, making it easy to navigate for potential customers.
+Welcome to the Arabista Restaurant Website documentation. This document aims to provide an overview of the design process and reasoning behind the Arabista website, as well as showcase the wireframes, mockups, and diagrams created during its development. The purpose of this documentation is to offer a comprehensive understanding of the design choices and facilitate effective collaboration among stakeholders, developers, and designers.
 
-When you visist the websit, the landing page has simple and clear structure.
-you can easily alocate the reservation button. The nave bar has links to all the pages on the application which can be also found on the footer section. The footer has also links to the social media websits.
-
-<h2 align="center"><img src="media/"></h2>
+<h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687730638/arabist_wiwfrk.jpg"></h2>
 
 ## User Experience (UX)
 
 - ### User stories
 
-  - #### User main Goals
+  - #### User Goals
 
         1. As a user, I want to be able to be able to register for an account and easily login/out
         2. As a user, I want to be able to easily navigate through the website
@@ -29,13 +26,49 @@ you can easily alocate the reservation button. The nave bar has links to all the
 
 - ### Design
 
-  - #### Colour Scheme
+  - #### Design Process and Reasoning:
 
-    - The three main colours used are grey and white with the back ground image which is mainly brown.
+  - The design process for the Arabista Restaurant Website followed a user-centered approach, focusing on creating an intuitive and visually appealing experience for visitors. The key steps undertaken during the design process included research, ideation, prototyping, testing, and refinement.
 
-  - #### Imagery
+  Extensive user research was conducted to gain insights into the target audience, their preferences, and expectations when visiting a restaurant website. This research informed the design decisions and helped create a user-centric interface.
 
-    - The background image is suitable for the website. The menu section has images of the plates which can also be found in the plate details.
+  The core design principles guiding the Arabista website were elegance, simplicity, and a touch of Middle Eastern culture. The goal was to convey a warm and welcoming atmosphere that reflects the essence of Arab cuisine.
+
+  - #### Wireframes:
+
+  Wireframes were created as a blueprint for the Arabista website, outlining the layout, structure, and key elements of each page. These wireframes illustrate the placement of navigation menus, content sections, imagery, and interactive components. They serve as a foundation for further design iterations and development.
+
+  - Home page Wireframe
+  <h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734614/home-wireframe_npclo4.jpg"><h2>
+  - Menu page Wireframe
+  <h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734693/menu-wireframe_tp8nx7.jpg"><h2>
+  - Mobile Wireframe
+  <h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734731/mobile-wireframe_owygfx.jpg"></h2>
+
+  - #### Mockups:
+
+  High-fidelity mockups were developed to showcase the final look and feel of the Arabista website. These mockups present the visual design, color schemes, typography choices, and overall aesthetic of the website. They provide stakeholders and team members with a realistic preview of the end product and facilitate discussions about visual elements.
+
+    <h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687736420/mockup-image_hwhpoo.jpg"></h2>
+
+  - ##### Colour Scheme
+
+  - The background image is colorful.
+    The main colours used are grey, white, back, brown and green.
+
+  - ##### Typography
+
+  - The Lato font is the main font used through out the website.
+
+  - ##### Imagery
+
+  - The background image is suitable for the website. The menu section has images of the plates which can also be found in the plate details.
+
+  - #### Diagrams:
+
+    Several diagrams were created to illustrate the user flows, information architecture, and interaction patterns of the Arabista website. These diagrams help visualize how users navigate through the website, understand the organization of content, and interact with various features. They provide a clear representation of the website's structure and logic.
+
+    <h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687737913/diagram-image_g4ipx3.jpg"></h2>
 
 ## Features
 
@@ -81,13 +114,26 @@ you can easily alocate the reservation button. The nave bar has links to all the
 10. [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)
     - PostgreSQL was used as database for this project.
 
-## Testing
+## Testing Write-ups:
 
-- Manual testing was conducted to check all the functionalities of the website.
-- The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
-- The website was viewed on a variety of devices such as Desktop, Laptop and iPhone11.
-- A large amount of testing was done to ensure that all pages were linking correctly.
-- Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+Comprehensive testing was conducted throughout the development of the Arabista Restaurant Website to ensure its functionality, usability, and compatibility across different devices and browsers. The testing process involved the following key steps:
+
+- ### Functional Testing: 
+Rigorous testing was performed to verify that all interactive elements, such as navigation menus, forms, and buttons, function as intended. This includes testing links, form submissions, and error handling to ensure a seamless user experience.
+
+- ### Responsive Testing: 
+The website was tested on various devices, including desktop computers, tablets, and smartphones, to ensure responsiveness and optimal performance across different screen sizes. This testing aimed to guarantee that the website provides a consistent and user-friendly experience regardless of the device used.
+
+- ### Browser Compatibility Testing: 
+The Arabista website was tested on multiple web browsers, including popular ones such as Chrome, Firefox, Safari, and Internet Explorer, to ensure consistent rendering and functionality across different browser environments.
+
+- ### Usability Testing:
+ Usability tests were conducted to gather feedback from representative users, evaluating their experience with the website's navigation, content readability, and overall usability. This feedback was used to identify areas for improvement and make necessary adjustments to enhance user satisfaction.
+
+- ### Performance Testing:
+ Performance testing was carried out to assess the website's loading speed and responsiveness. This involved evaluating page load times, optimizing image sizes, and minimizing unnecessary code or resources to ensure optimal performance.
+
+
 
 ### Known Bugs
 
