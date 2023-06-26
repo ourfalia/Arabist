@@ -36,15 +36,17 @@ Welcome to the Arabista Restaurant Website documentation. This document aims to 
 
   Wireframes were created as a blueprint for the Arabista website, outlining the layout, structure, and key elements of each page. These wireframes illustrate the placement of navigation menus, content sections, imagery, and interactive components. They serve as a foundation for further design iterations and development.
 
-  - ##### Home page Wireframe <img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734614/home-wireframe_npclo4.jpg"></h2>
-  - ##### Menu page Wireframe <img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734614/home-wireframe_npclo4.jpg"></h2>
-  - ##### Mobile Wireframe <img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734731/mobile-wireframe_owygfx.jpg"></h2>
+  ##### Home page Wireframe <img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734614/home-wireframe_npclo4.jpg"></h2>
+
+  ##### Menu page Wireframe <img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734614/home-wireframe_npclo4.jpg"></h2>
+
+  ##### Mobile Wireframe <img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687734731/mobile-wireframe_owygfx.jpg"></h2>
 
   - #### Mockups:
 
   High-fidelity mockups were developed to showcase the final look and feel of the Arabista website. These mockups present the visual design, color schemes, typography choices, and overall aesthetic of the website. They provide stakeholders and team members with a realistic preview of the end product and facilitate discussions about visual elements.
 
-    <h2 align="center"><img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687736420/mockup-image_hwhpoo.jpg"></h2>
+  ##### <img src="https://res.cloudinary.com/dayz1hfom/image/upload/v1687736420/mockup-image_hwhpoo.jpg"></h2>
 
   - ##### Colour Scheme
 
